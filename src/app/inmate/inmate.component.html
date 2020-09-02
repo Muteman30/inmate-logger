@@ -9,7 +9,7 @@
 
         <div class="form-group">
             <label for="inmate-dob">Date Of Birth:</label>
-            <input type="date" class="form-control" id="inmate-dob" [ngModel]="inmate.dateOfBirth|date:'yyyy-MM-dd'" (ngModelChange)="inmate.dateOfBirth">
+            <input type="date" class="form-control" id="inmate-dob" [ngModel]="inmate.dateOfBirth|date:'yyyy-MM-dd'" (ngModelChange)="dobChange($event)">
         </div>
         <div class="form-group">
             <label for="inmate-cell">Cell Number:</label>
@@ -32,7 +32,7 @@
             <tbody>
                 <tr *ngFor="let l of inmate.locations">
                     <td>{{l.name}}</td>
-                    <td>{{l.datetime.toLocaleDateString('en-GB')}}</td>
+                    <td>{{l.datetime.toLocaleDateString('en-GB')}} {{l.datetime.toLocaleTimeString()}}</td>
                 </tr>
             </tbody>
         </table>

@@ -17,17 +17,24 @@ export class InmateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+  dobChange(value:string){
+    console.log(value);
+    this.inmate.dateOfBirth = new Date(value);
+    console.log(this.inmate)
+  }
   onBackToInmates(){
     this.clearSelected.emit(true);
   }
 
   onSaveInmate(){
+    console.log(this.inmate)
     this.saveInmate.emit(this.inmate);
+    this.onBackToInmates();
   }
   onDeleteInmate(){
     if(confirm('You are about to delete Inmate ' + this.inmate.name)){
       this.deleteInmate.emit(this.inmate.id);
+      this.onBackToInmates();
     }
     
   }
