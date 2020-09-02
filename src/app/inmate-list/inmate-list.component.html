@@ -1,1 +1,22 @@
-<p>inmate-list works!</p>
+<div class="row">
+    <div class="col-md-12">
+        <h1>Inmates</h1>
+        <table id="inmate-table" class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>Name</td>
+                    <td>Current Location</td>
+                </tr>
+                
+            </thead>
+            <tbody>
+                <tr *ngFor="let inmate of inmates">
+                    <td>{{inmate.id}}</td>
+                    <td>{{inmate.name}}</td>
+                    <td>{{inmate.currentLocation.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
