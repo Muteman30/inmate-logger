@@ -22,7 +22,7 @@ export class InmateListComponent implements OnInit {
 
   createNewInmate(){
     var currLocation = new prisonLocation('New Processing', new Date());
-    let newInmate = new Inmate('', '', new Date(), 0, new Date(), [currLocation], currLocation);
+    let newInmate = new Inmate('new', '', new Date(), 0, new Date(), [currLocation], currLocation);
     this.chosenInmate.emit(newInmate);
   }
 }

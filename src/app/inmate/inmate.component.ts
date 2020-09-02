@@ -17,7 +17,7 @@ export class InmateComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  
+
   dobChange(value:string){
     //console.log(value);
     this.inmate.dateOfBirth = new Date(value);

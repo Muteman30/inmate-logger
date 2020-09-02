@@ -28,7 +28,7 @@ export class AppComponent {
   constructor(){
     //seed in some Data to work with; I would never actually populate data this way and use ajax requests to a server storing details in a SQL Database
     let firstNames = ['Simon', 'Andrew', 'James', 'John', 'Philip', 'Thaddeus', 'Bartholomew', 'Thomas', 'Matthew', 'Mark', 'Luke', 'John', 'Judas'];
-    var possLocs = ['Canteen', 'Cell Block A', 'Cell Block B', 'Cell Block C', 'Yard', 'Library']; 
+    var possLocs = ['Canteen', 'Yard', 'Library', 'In Cell', 'Gym']; 
     for(let i=0; i<firstNames.length; i++){
       //give each prisoner a DOB
       var randBday = new Date(
@@ -79,12 +79,18 @@ export class AppComponent {
   }
 
   onSavedInmate(updatedInmate:Inmate){
-    for(var i=0; i<this.inmates.length; i++){
-      if(this.inmates[i].id == updatedInmate.id){
-        this.inmates[i] = updatedInmate;
-        break;
+    if(updatedInmate.id=='new'){
+      updatedInmate.id = this.inmates.length.toString();
+      this.inmates.push(updatedInmate)
+    }else {
+      for(var i=0; i<this.inmates.length; i++){
+        if(this.inmates[i].id == updatedInmate.id){
+          this.inmates[i] = updatedInmate;
+          break;
+        }
       }
     }
+
   }
 
   onDeletedInmate(deletedId:string){
