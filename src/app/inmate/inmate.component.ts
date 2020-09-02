@@ -17,8 +17,9 @@ export class InmateComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
   dobChange(value:string){
-    console.log(value);
+    //console.log(value);
     this.inmate.dateOfBirth = new Date(value);
     console.log(this.inmate)
   }
@@ -27,9 +28,14 @@ export class InmateComponent implements OnInit {
   }
 
   onSaveInmate(){
-    console.log(this.inmate)
-    this.saveInmate.emit(this.inmate);
-    this.onBackToInmates();
+    if(this.inmate.name == ''){
+      alert('You have not filled in the inmates name, please maek suer all fields are correct.');
+    } else {
+      console.log(this.inmate)
+      this.saveInmate.emit(this.inmate);
+      this.onBackToInmates();
+    }
+    
   }
   onDeleteInmate(){
     if(confirm('You are about to delete Inmate ' + this.inmate.name)){

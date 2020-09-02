@@ -19,4 +19,10 @@ export class InmateListComponent implements OnInit {
   onSelectInmate(inmate:Inmate){
     this.chosenInmate.emit(inmate);
   }
+
+  createNewInmate(){
+    var currLocation = new prisonLocation('New Processing', new Date());
+    let newInmate = new Inmate('', '', new Date(), 0, new Date(), [currLocation], currLocation);
+    this.chosenInmate.emit(newInmate);
+  }
 }

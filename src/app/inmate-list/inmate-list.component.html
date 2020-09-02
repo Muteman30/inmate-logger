@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-md-12">
         <h1>Inmates</h1>
+        <button class="btn btn-success" (click)="createNewInmate()">New Inmate</button>
         <table id="inmate-table" class="table table-bordered">
             <thead>
                 <tr>
@@ -10,13 +11,12 @@
                 </tr>
             </thead>
             <tbody>
-                
+
                     <tr *ngFor="let inmate of inmates">
                         <td>{{inmate.id}}</td>
                         <td><a (click)="onSelectInmate(inmate)" href="#">{{inmate.name}}</a></td>
                         <td>{{inmate.currentLocation.name}}</td>
                     </tr>
-
             </tbody>
         </table>
     </div>

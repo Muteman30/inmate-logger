@@ -21,7 +21,7 @@
         </div>
         <button class="btn btn-primary" (click)="onSaveInmate()">Save Inmate</button>
         <button class="btn btn-danger" (click)="onDeleteInmate()">Delete Inmate</button>
-        <h2>{{inmate.name}}'s Location History</h2>
+        <h2>{{inmate.name==''?'New Inmate':inmate.name}}'s Location History</h2>
         <table class="table table-bordered table-striped" id="prisoner-location-history">
             <thead>
                 <tr>
