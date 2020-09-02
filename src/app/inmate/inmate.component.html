@@ -1,1 +1,42 @@
-<h1>Inmate</h1>
+<div class="row">
+    <div class="col-xs-12">
+        <a href="#" class="btn" (click)="onBackToInmates()">Back To Inmates</a>
+        <h1>Inmate</h1>
+        <div class="form-group">
+            <label for="inmate-name">Name:</label>
+            <input type="text" class="form-control" id="inmate-name" [(ngModel)]="inmate.name">
+        </div>
+
+        <div class="form-group">
+            <label for="inmate-dob">Date Of Birth:</label>
+            <input type="date" class="form-control" id="inmate-dob" [ngModel]="inmate.dateOfBirth|date:'yyyy-MM-dd'" (ngModelChange)="inmate.dateOfBirth">
+        </div>
+        <div class="form-group">
+            <label for="inmate-cell">Cell Number:</label>
+            <input type="number" class="form-control" id="inmate-cell" [(ngModel)]="inmate.cellNumber">
+        </div>
+        <div class="form-group">
+            <label for="inmate-entryDate">Entry Date</label>
+            <input type="date" disabled class="form-control" id="inmate-entryDate" [ngModel]="inmate.entryDate|date:'yyyy-MM-dd'">
+        </div>
+        <button class="btn btn-primary" (click)="onSaveInmate()">Save Inmate</button>
+        <button class="btn btn-danger" (click)="onDeleteInmate()">Delete Inmate</button>
+        <h2>{{inmate.name}}'s Location History</h2>
+        <table class="table table-bordered" id="prisoner-location-history">
+            <thead>
+                <tr>
+                    <td>Location</td>
+                    <td>Date/Time</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let l of inmate.locations">
+                    <td>{{l.name}}</td>
+                    <td>{{l.datetime.toLocaleDateString('en-GB')}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+    </div>
+    
+</div>

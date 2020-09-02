@@ -1,4 +1,5 @@
 <app-header></app-header>
 <div class="container">
-    <app-inmate-list></app-inmate-list>
+    <app-inmate-list *ngIf="selectedInmate == undefined" (chosenInmate)="onSelectedInmate($event)" [inmate-list]="inmates"></app-inmate-list>
+    <app-inmate (deleteInmate)="onDeletedInmate($event)" (saveInmate)="onSavedInmate($event)" (clearSelected)="onClearedSelected($event)" *ngIf="selectedInmate != undefined" [inmate]="selectedInmate"></app-inmate>
 </div>

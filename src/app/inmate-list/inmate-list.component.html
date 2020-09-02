@@ -8,14 +8,15 @@
                     <td>Name</td>
                     <td>Current Location</td>
                 </tr>
-                
             </thead>
             <tbody>
-                <tr *ngFor="let inmate of inmates">
-                    <td>{{inmate.id}}</td>
-                    <td>{{inmate.name}}</td>
-                    <td>{{inmate.currentLocation.name}}</td>
-                </tr>
+                
+                    <tr *ngFor="let inmate of inmates">
+                        <td>{{inmate.id}}</td>
+                        <td><a (click)="onSelectInmate(inmate)" href="#">{{inmate.name}}</a></td>
+                        <td>{{inmate.currentLocation.name}}</td>
+                    </tr>
+
             </tbody>
         </table>
     </div>
