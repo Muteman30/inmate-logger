@@ -44,8 +44,8 @@ export class AppComponent {
       //this is the 
       var now = new Date();
       let currLocDateTime = new Date(now.getTime() - Math.floor(Math.random()*1000*60) );
-      let currLocation = new prisonLocation(possLocs[Math.floor(Math.random()*possLocs.length)], currLocDateTime);
-      let pastLocations:prisonLocation[] = [currLocation];
+      let inmLocation = new prisonLocation(possLocs[Math.floor(Math.random()*possLocs.length)], currLocDateTime);
+      let pastLocations:prisonLocation[] = [inmLocation];
       for(let j=0; j<50; j++){
         
         var pastLocDateTime = new Date(now.getTime() - (1000*60*j*5));
@@ -62,7 +62,7 @@ export class AppComponent {
         Math.floor(Math.random()*400), //cell Number
         randIncarDate, //incarceration Date
         pastLocations, //past Location array
-        currLocation
+        inmLocation.name
       ))
     }
   }

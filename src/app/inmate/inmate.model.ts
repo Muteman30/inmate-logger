@@ -7,7 +7,7 @@ export class Inmate{
     cellNumber:number;
     entryDate:Date;
     locations:prisonLocation[];
-    currentLocation:prisonLocation;
+    currentLocationName:string;
     constructor(
         id:string,
         name:string,
@@ -15,7 +15,7 @@ export class Inmate{
         cellNumber:number,
         entryDate:Date,
         locations:prisonLocation[],
-        currentLocation:prisonLocation,
+        currentLocationName:string,
     ){
         this.id = id;
         this.name = name;
@@ -23,6 +23,6 @@ export class Inmate{
         this.cellNumber = cellNumber;
         this.entryDate = entryDate;
         this.locations = locations;
-        this.currentLocation = currentLocation;
+        this.currentLocationName = currentLocationName;
     }
 }
