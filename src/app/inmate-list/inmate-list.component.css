@@ -1,3 +1,19 @@
-thead td {
+#inmate-table thead{
+    background:#e3e3e3;
+}
+
+#inmate-table thead td {
     cursor:pointer;
+}
+
+#inmate-table thead td.sorting-col{
+    font-weight: bold;
+}
+
+.sort-icon.asc, .sort-icon.desc{
+    visibility:hidden;
+}
+
+#inmate-table thead td.sorting-col.asc>.sort-icon.asc, #inmate-table thead td.sorting-col.desc>.sort-icon.desc{
+    visibility:visible;
 }

@@ -2,12 +2,17 @@
     <div class="col-md-12">
         <h1>Inmates</h1>
         <button class="btn btn-success" (click)="createNewInmate()">New Inmate</button>
+        <hr>
+        <div class="form-group">
+            <input type="search" class="form-control" placeholder="Search Inmates" (input)="onFilterInmates($event)"/>
+        </div>
+        
         <table id="inmate-table" class="table table-bordered">
             <thead>
                 <tr>
-                    <td (click)="onResortInmates('id')">ID</td>
-                    <td (click)="onResortInmates('name')">Name</td>
-                    <td (click)="onResortInmates('currentLocationName')">Current Location</td>
+                    <td (click)="onResortInmates($event, 'id')">ID <span class="sort-icon asc">&#8595;</span><span class="sort-icon desc">&#8593;</span></td>
+                    <td (click)="onResortInmates($event, 'name')">Name <span class="sort-icon asc">&#8595;</span><span class="sort-icon desc">&#8593;</span></td>
+                    <td (click)="onResortInmates($event, 'currentLocationName')">Current Location <span class="sort-icon asc">&#8595;</span><span class="sort-icon desc">&#8593;</span></td>
                 </tr>
             </thead>
             <tbody>
